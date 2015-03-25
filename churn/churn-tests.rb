@@ -10,11 +10,11 @@ class ChurnTests < Test::Unit::TestCase
 
   def test_header_format
     head = header(svn_date(month_before(Time.local(2005, 9, 2))))
-    assert_equal("Changes since 2005-08-05:", head)
+    assert_equal("Changes between 2005-08-05 and #{Time.now.strftime('%Y-%m-%d')}:", head)
   end
 
   def test_normal_subsystem_line_format
-    assert_equal('         audit ********* (45)',
+    assert_equal('audit           (45 changes)  *********',
                   subsystem_line("audit", 45))
   end
 
