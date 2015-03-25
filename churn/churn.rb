@@ -1,5 +1,5 @@
 def month_before(a_time)
-  a_time - 120 * 28 * 24 * 60 * 60
+  a_time - 28 * 24 * 60 * 60
 end
 
 def svn_date(a_time)
