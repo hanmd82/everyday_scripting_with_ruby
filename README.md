@@ -13,3 +13,4 @@ This code base serves as learning material only. Copyright belongs to the book's
 
 - Chapter 3: Comparing File Inventories
 - Chapter 5: Three Improvements and a Bug Fix
+- Chapter 7: The Churn Project: Writing Scripts without Fuss
