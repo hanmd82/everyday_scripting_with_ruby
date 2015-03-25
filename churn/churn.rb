@@ -1,5 +1,5 @@
 def month_before(a_time)
-  a_time - 28 * 24 * 60 * 60
+  a_time - 120 * 28 * 24 * 60 * 60
 end
 
 def svn_date(a_time)
@@ -7,16 +7,17 @@ def svn_date(a_time)
 end
 
 def header(an_svn_date)
-  "Changes since #{an_svn_date}:"
+  "Changes between #{an_svn_date} and #{svn_date(Time.now)}:"
 end
 
 def subsystem_line(subsystem_name, change_count)
   asterisks = asterisks_for(change_count)
-  "#{subsystem_name.rjust(14)} #{asterisks} (#{change_count})"
+  changes = (asterisks == "") ? "-" : "(#{change_count} changes)  #{asterisks}"
+  "#{subsystem_name.ljust(14)}  #{changes}"
 end
 
 def asterisks_for(an_integer)
-  '*' * (an_integer / 5.0).round
+  (an_integer == 1 || an_integer == 2) ? '*' : '*' * (an_integer / 5.0).round
 end
 
 def change_count_for(name, start_date)
